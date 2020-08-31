@@ -2,13 +2,20 @@ package com.fy.plugin.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.res.AssetManager;
 import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 import com.fy.plugin.PluginManager;
 
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
 
 /**
  * 接口插件化：代理activity
@@ -22,6 +29,7 @@ public class ProxyActivity extends Activity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        loadResources(PluginManager.getInstance().getPluginPath(), this);
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
         intent.removeExtra("ActivityBean");
@@ -104,4 +112,64 @@ public class ProxyActivity extends Activity {
     public Resources getResources() {
         return PluginManager.getInstance().getPluginResource();
     }
+
+    //访问插件中的资源
+    protected void loadResources(String dexPath, Activity mProxyActivity) {
+        initializeActivityInfo(dexPath);
+
+        if (mActivityInfo.theme > 0) {
+            mProxyActivity.setTheme(mActivityInfo.theme);
+        }
+
+        Resources.Theme superTheme = mProxyActivity.getTheme();
+
+        Resources mResources = PluginManager.getInstance().getPluginResource();
+        mTheme = mResources.newTheme();
+        mTheme.setTo(superTheme);
+
+        try {
+            mTheme.applyStyle(mActivityInfo.theme, true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void initializeActivityInfo(String dexPath) {
+        packageInfo = getApplicationContext().getPackageManager().getPackageArchiveInfo(dexPath, PackageManager.GET_ACTIVITIES | PackageManager.GET_SERVICES);
+        if ((packageInfo.activities != null) && (packageInfo.activities.length > 0)) {
+//            if (mClass == null) {
+//                mClass = packageInfo.activities[0].name;
+//            }
+
+            //Finals 修复主题BUG
+            int defaultTheme = packageInfo.applicationInfo.theme;
+            for (ActivityInfo a : packageInfo.activities) {
+//                if (a.name.equals(mClass)) {
+                mActivityInfo = a;
+                // Finals ADD 修复主题没有配置的时候插件异常
+                if (mActivityInfo.theme == 0) {
+                    if (defaultTheme != 0) {
+                        mActivityInfo.theme = defaultTheme;
+                    } else {
+                        if (Build.VERSION.SDK_INT >= 14) {
+                            mActivityInfo.theme = android.R.style.Theme_DeviceDefault;
+                        } else {
+                            mActivityInfo.theme = android.R.style.Theme;
+                        }
+                    }
+//                    }
+                }
+            }
+
+        }
+    }
+
+    private ActivityInfo mActivityInfo;
+    private PackageInfo packageInfo;
+    protected Resources.Theme mTheme;
+    @Override
+    public Resources.Theme getTheme() {
+        return mTheme == null ? super.getTheme() : mTheme;
+    }
+
 }

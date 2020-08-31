@@ -26,6 +26,7 @@ import dalvik.system.DexClassLoader;
 public class PluginManager {
 
     private Context mContext;
+    private String pluginPath;
 
     //插件的资源对象
     private Resources pluginResource;
@@ -51,6 +52,7 @@ public class PluginManager {
 
     //加载插件apk
     public void loadPlugin(String pluginPath) {
+        this.pluginPath = pluginPath;
         //获取包管理器
         PackageManager packageManager = mContext.getPackageManager();
         //获取插件的包信息类
@@ -84,6 +86,11 @@ public class PluginManager {
     public Context getContext() {
         return mContext;
     }
+
+    public String getPluginPath() {
+        return pluginPath == null ? "" : pluginPath;
+    }
+
     public Resources getPluginResource() {
         return pluginResource;
     }
