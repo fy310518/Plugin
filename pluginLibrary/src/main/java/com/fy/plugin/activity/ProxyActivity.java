@@ -5,17 +5,14 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 
 import com.fy.plugin.PluginManager;
 
 import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
 
 /**
  * 接口插件化：代理activity
@@ -136,7 +133,7 @@ public class ProxyActivity extends Activity {
 
     private void initializeActivityInfo(String dexPath) {
         packageInfo = getApplicationContext().getPackageManager().getPackageArchiveInfo(dexPath, PackageManager.GET_ACTIVITIES | PackageManager.GET_SERVICES);
-        if ((packageInfo.activities != null) && (packageInfo.activities.length > 0)) {
+        if (packageInfo.activities != null && packageInfo.activities.length > 0) {
 //            if (mClass == null) {
 //                mClass = packageInfo.activities[0].name;
 //            }
