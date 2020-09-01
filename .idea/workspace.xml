@@ -6,7 +6,15 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ec8b18d-fb16-4c8f-a26a-181924dd5421" name="Default Changelist" comment="" />
+    <list default="true" id="4ec8b18d-fb16-4c8f-a26a-181924dd5421" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pluginLibrary/src/main/java/com/fy/plugin/PluginManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/pluginLibrary/src/main/java/com/fy/plugin/PluginManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pluginLibrary/src/main/java/com/fy/plugin/activity/ProxyActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/pluginLibrary/src/main/java/com/fy/plugin/activity/ProxyActivity.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,28 +39,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pluginLibrary/src/main/java/com/fy/plugin/activity/PluginBaseActivity.java">
+        <entry file="file://$PROJECT_DIR$/pluginLibrary/src/main/java/com/fy/plugin/activity/ProxyActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4972">
-              <caret line="247" column="6" selection-start-line="247" selection-start-column="6" selection-end-line="257" selection-end-column="7" />
+            <state relative-caret-position="195">
+              <caret line="28" column="22" lean-forward="true" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pluginLibrary/src/main/java/com/fy/plugin/activity/ProxyActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="167" column="24" selection-start-line="167" selection-start-column="24" selection-end-line="167" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pluginLibrary/src/main/java/com/fy/plugin/PluginManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1188">
-              <caret line="75" column="32" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="32" />
+            <state relative-caret-position="195">
+              <caret line="106" column="56" lean-forward="true" selection-start-line="106" selection-start-column="56" selection-end-line="106" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -87,13 +86,14 @@
         <option value="$PROJECT_DIR$/recorderlibrary/src/main/java/com/fy/recorder/RecordHelper.java" />
         <option value="$PROJECT_DIR$/pluginLibrary/src/main/java/com/fy/plugin/activity/PluginBaseActivity.java" />
         <option value="$PROJECT_DIR$/pluginLibrary/src/main/java/com/fy/plugin/activity/ProxyActivity.java" />
+        <option value="$PROJECT_DIR$/pluginLibrary/src/main/java/com/fy/plugin/PluginManager.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="y" value="20" />
-    <option name="width" value="1348" />
+    <option name="width" value="1349" />
     <option name="height" value="690" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -210,7 +210,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
@@ -231,7 +231,7 @@
       <window_info anchor="bottom" id="Android Profiler" order="6" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="7" />
       <window_info anchor="bottom" id="Debug" order="8" />
-      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" weight="0.4682861" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -345,22 +345,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pluginLibrary/src/main/java/com/fy/plugin/activity/PluginBaseActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4972">
+        <state relative-caret-position="5650">
           <caret line="247" column="6" selection-start-line="247" selection-start-column="6" selection-end-line="257" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pluginLibrary/src/main/java/com/fy/plugin/PluginManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1188">
-          <caret line="75" column="32" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pluginLibrary/src/main/java/com/fy/plugin/activity/ProxyActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="167" column="24" selection-start-line="167" selection-start-column="24" selection-end-line="167" selection-end-column="24" />
+        <state relative-caret-position="195">
+          <caret line="28" column="22" lean-forward="true" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pluginLibrary/src/main/java/com/fy/plugin/PluginManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="106" column="56" lean-forward="true" selection-start-line="106" selection-start-column="56" selection-end-line="106" selection-end-column="56" />
         </state>
       </provider>
     </entry>

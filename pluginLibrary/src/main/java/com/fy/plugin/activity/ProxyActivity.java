@@ -26,7 +26,7 @@ public class ProxyActivity extends Activity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        loadResources(PluginManager.getInstance().getPluginPath(), this);
+        loadResources(this);
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
         intent.removeExtra("ActivityBean");
@@ -111,8 +111,8 @@ public class ProxyActivity extends Activity {
     }
 
     //访问插件中的资源
-    protected void loadResources(String dexPath, Activity mProxyActivity) {
-        initializeActivityInfo(dexPath);
+    protected void loadResources(Activity mProxyActivity) {
+        initializeActivityInfo();
 
         if (mActivityInfo.theme > 0) {
             mProxyActivity.setTheme(mActivityInfo.theme);
@@ -131,8 +131,8 @@ public class ProxyActivity extends Activity {
         }
     }
 
-    private void initializeActivityInfo(String dexPath) {
-        packageInfo = getApplicationContext().getPackageManager().getPackageArchiveInfo(dexPath, PackageManager.GET_ACTIVITIES | PackageManager.GET_SERVICES);
+    private void initializeActivityInfo() {
+        PackageInfo packageInfo = PluginManager.getInstance().getPackageInfo();
         if (packageInfo.activities != null && packageInfo.activities.length > 0) {
 //            if (mClass == null) {
 //                mClass = packageInfo.activities[0].name;
@@ -162,7 +162,6 @@ public class ProxyActivity extends Activity {
     }
 
     private ActivityInfo mActivityInfo;
-    private PackageInfo packageInfo;
     protected Resources.Theme mTheme;
     @Override
     public Resources.Theme getTheme() {
